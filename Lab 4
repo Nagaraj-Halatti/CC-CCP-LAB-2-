@@ -1,0 +1,56 @@
+#include <stdio.h>
+int main()
+{
+	int n, sum=0,digit;
+	printf("Enter the number: ");
+	scanf("%d",&n);
+	while(n!=0)
+	{
+		digit=n%10;
+		sum=sum+digit;
+		n=n/10;
+	}
+	printf("Sum of digits is %d",sum);
+	return 0;
+}
+
+
+#include<stdio.h>
+int main()
+{
+	int num,i,n;
+	printf("Enter a number between 1 and 100 \n ");
+	scanf("%d",&num);
+	if(num>0)
+	{
+	printf("The multiples of %d from 1 to 100 are \n ",num);
+	for(i=1;i<=100;i++)
+		{
+	n=num*i;
+	if(n>0&&n<=100)
+	printf("%d\t",n);
+	}
+	}
+    else
+    printf("\n0 does not have any multiples");
+	return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+	int m,n,i;
+	
+	printf("Enter two numbers ");
+	scanf("%d%d",&m,&n);
+	if(m>n)
+	printf("\nError in input");
+	if(m%2==0)
+	i=m+2;
+	else
+	i=m+1;
+	printf("The even numbers between %d and %d are\n",m,n);
+	for(;i<n;i+=2)
+	printf("%d\t",i);
+	return 0;
+}
