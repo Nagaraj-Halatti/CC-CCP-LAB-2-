@@ -1,0 +1,96 @@
+#include <stdio.h>
+int main()
+{
+	int m1[6][6],m2[6][6],sum[6][6],r1,r2,c1,c2,i,j;
+	printf("Enter the number of rows and columns of the first matrix\t");
+	scanf("%d%d",&r1,&c1);
+	printf("Enter the number of rows and columns of the second matrix\t");
+	scanf("%d%d",&r2,&c2);
+	if(r1!=r2||c1!=c2)
+	{
+	printf("For addition operation number of rows and columns of both the matrix must be same");
+	}
+	else
+	printf("Enter the elements of first matrix\t");
+	for(i=0;i<r1;i++){
+	for(j=0;j<c1;j++)
+	scanf("%d",&m1[i][j]);
+		}
+	printf("Enter the elements of second matrix\t");
+	for(i=0;i<r2;i++){
+	for(j=0;j<c2;j++)
+	scanf("%d",&m2[i][j]);
+		}
+	printf("The sum of the given two matrix is\n");
+	for(i=0;i<r2;i++){
+	for(j=0;j<c2;j++)
+	sum[i][j]=m1[i][j]+m2[i][j];
+		}
+	for(i=0;i<r1;i++)
+		{
+	printf("\n");
+	for(j=0;j<c1;j++)
+	printf("%d\t",sum[i][j]);
+			}
+	return 0;
+}
+
+
+
+#include<stdio.h>
+int main()
+{
+	int a[5][5],r,c,i,j;
+	printf("\nEnter the number of rows and columns of the matrix  ");
+	scanf("%d%d",&r,&c);
+	printf("Enter the  elements of the matrix\n");
+	for(i=0;i<r;i++)
+	{
+	for(j=0;j<c;j++)
+	scanf("%d",&a[i][j]);
+		}
+	printf("The matrix before transpose is\n");
+	for(i=0;i<r;i++){
+	printf("\n");
+	for(j=0;j<c;j++)
+	printf("%d\t",a[i][j]);
+	}
+	printf("\nThe matrix after transpose is\n");
+	for(i=0;i<r;i++){
+	printf("\n");
+	for(j=0;j<c;j++)
+	printf("%d\t",a[j][i]);
+	}
+	return 0;
+}
+
+
+#include<stdio.h>
+int main(){
+	int a[4][3],i,j,max,z;
+	for(i=0;i<4;i++)
+	{
+	printf("\nEnter the marks of student%d in sub1,sub2,sub3: ",i+1);
+	for(j=0;j<3;j++)
+	scanf("%d",&a[i][j]);
+		}
+	printf("\n");
+	for(i=0;i<4;i++)
+		{
+	printf("\nStudent%d  ",i+1);
+	for(j=0;j<3;j++)
+	printf("%d\t",a[i][j]);
+	    }
+	printf("\n");
+	for(j=0;j<3;j++){
+	max=0;
+	for(i=0;i<4;i++){
+	if(max<a[i][j]){
+	max=a[i][j];
+	z=i+1;
+	}
+	}
+	printf("\nThe max marks in Sub%d is by student%d and is %d\n",j+1,z,max);
+	}
+	return 0;
+	}
