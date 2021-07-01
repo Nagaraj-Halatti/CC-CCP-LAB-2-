@@ -1,0 +1,77 @@
+#include <stdio.h>
+int main()
+{
+	char str1[100],str2[100];
+	int i=0;
+	printf("Enter the string to be copied: ");
+	gets(str1);
+	while(str1[i]!='\0')
+	{
+		str2[i]=str1[i];
+		i++;
+	}
+	str2[i]='\0';
+	printf("The copied string is\n");
+	puts(str2);
+	printf("Length of the string is %d",i);
+	return 0;
+}
+
+
+#include <stdio.h>
+int main()
+{
+	char str1[100],str2[100],rslt[200];
+	int i=0,j=0;
+	printf("Enter the first string: ");
+	gets(str1);
+	printf("Enter the second string: ");
+	gets(str2);
+	while(str1[i]!='\0')
+	{
+	rslt[j]=str1[i];
+		i++;
+		j++;
+	}
+	i=0;
+	while(str2[i]!='\0')
+	{
+		rslt[j]=str2[i];
+		i++;
+		j++;
+	}
+	rslt[j]='\0';
+	printf("The concatenate string is\n");
+	puts(rslt);
+	printf("The length of resultant string is %d",j);
+	return 0;
+}
+
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char str1[100],tmp,str2[100];
+	int i=0,l, j;
+	printf("Enter the string: ");
+	gets(str1);
+	l=strlen(str1);
+	j=l-1;
+	while(i<l)
+	{
+		tmp=str1[j];
+		str2[j]=str1[i];
+		str2[i]=tmp;
+		i++;
+		j--;
+	}
+	str2[i]='\0';
+	printf("The reversed string is\n");
+	puts(str2);
+	if(strcmp(str1,str2)==0)
+   printf("The  string is a palindrome");
+   else
+   printf("The string is not palindrome");
+	return 0;
+}
