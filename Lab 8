@@ -1,0 +1,171 @@
+#include<stdio.h>
+int main()
+{
+struct student{
+	int roll_no,fees,result;
+	char name[10], sec[10], dep[10];
+	}s1,s2;
+	printf("\nEnter the details of the first student\n");
+	printf("Enter the roll no: ");
+	scanf("%d",&s1.roll_no);
+	printf("\nEnter the name: ");
+	scanf("%s",&s1.name);
+	printf("\nEnter the section: ");
+	scanf("%s",&s1.sec);
+	printf("\nEnter the department: ");
+	scanf("%s",&s1.dep);
+	printf("\nEnter the total marks: ");
+	scanf("%d",&s1.result);
+	printf("\nEnter the fees: ");
+	scanf("%d",&s1.fees);
+	
+	printf("\nEnter the details of the second student\n");
+	printf("Enter the roll no: ");
+	scanf("%d",&s2.roll_no);
+	printf("\nEnter the name: ");
+	scanf("%s",&s2.name);
+	printf("\nEnter the section: ");
+	scanf("%s",&s2.sec);
+	printf("\nEnter the department: ");
+	scanf("%s",&s2.dep);
+	printf("\nEnter the total marks: ");
+	scanf("%d",&s2.result);
+	printf("\nEnter the fees: ");
+	scanf("%d",&s2.fees);
+	
+	if(s1.result>s2.result){
+	printf("\nThe student with highest marks is %s",s1.name);
+	printf("\nRoll no.=%d\nSection=%s\nDepartment=%s\nTotal marks=%d\nfee=%d",s1.roll_no,s1.sec,s1.dep,s1.result,s1.fees);
+	}
+	else{
+	printf("\nThe student with highest marks is %s",s2.name);
+	printf("\nRoll no.=%d\nSection=%s\nDepartment=%s\nTotal marks=%d\nfee=%d",s2.roll_no,s2.sec,s2.dep,s2.result,s2.fees);
+	}
+    return 0;
+	}
+
+
+#include<stdio.h>
+int main()
+{
+	int s;
+	struct books{
+	int price,page;
+	char title[25],author[20],date[8];
+	}b1,b2,b3;
+	printf("Enter the details of the first book\n");
+	printf("\nEnter the  title: ");
+	scanf("%s",&b1.title);
+	printf("\nEnter the author name: ");
+	scanf("%s",&b1.author);
+	printf("\nEnter the price of the book: ");
+	scanf("%d",&b1.price);
+	printf("\nEnter the number of pages: ");
+	scanf("%d",&b1.page);
+	printf("\nEnter the date of publication: ");
+	scanf("%s",&b1.date);
+	printf("\nEnter the details of the second book\n");
+	printf("\nEnter the  title: ");
+	scanf("%s",&b2.title);
+	printf("\nEnter the author name: ");
+	scanf("%s",&b2.author);
+	printf("\nEnter the price of the book: ");
+	scanf("%d",&b2.price);
+	printf("\nEnter the number of pages: ");
+	scanf("%d",&b2.page);
+	printf("\nEnter the date of publication: ");
+	scanf("%s",&b2.date);
+	printf("\nEnter the details of the third book\n");
+	printf("\nEnter the  title: ");
+	scanf("%s",&b3.title);
+	printf("\nEnter the author name: ");
+	scanf("%s",&b3.author);
+	printf("\nEnter the price of the book: ");
+	scanf("%d",&b3.price);
+	printf("\nEnter the number of pages: ");
+	scanf("%d",&b3.page);
+	printf("\nEnter the date of publication: ");
+	scanf("%s",&b3.date);
+	if((b1.price>b2.price)&&(b1.price>b3.price)){
+	printf("\nThe book with the highest price is %s",b1.title);
+	printf("\nAuthor name=%s\nPrice=%d",b1.author,b1.price);
+	printf("\nNo of pages=%d\nDate of publication=%s",b1.page,b1.date);
+	}
+	else if((b2.price>b1.price)&&(b2.price>b3.price)){
+	printf("\nThe book with the highest price is %s",b2.title);
+	printf("\nAuthor name=%s\nPrice=%d",b2.author,b2.price);
+	printf("\nNo of pages=%d\nDate of publication=%s",b2.page,b2.date);
+	}
+	else{
+	printf("\nThe book with the highest price is %s",b3.title);
+	printf("\nAuthor name=%s\nPrice=%d",b3.author,b3.price);
+	printf("\nNo of pages=%d\nDate of publication=%s",b3.page,b3.date);
+	}
+	return 0;
+}
+
+
+#include<stdio.h>
+int main()
+{
+	int a,b,*c,*d;
+	char op;
+	printf("Enter a number ");
+	scanf("%d",&a);
+	printf("\nEnter another number ");
+	scanf("%d",&b);
+	c=&a;
+	d=&b;
+	printf("\nAddition of the entered numbers %d",*c+*d);
+	printf("\nSubtraction of the entered numbers %d",*c-*d);
+	printf("\nMultiplication of the entered numbers %d",(c)(*d));
+	printf("\nDivision of the entered numbers %d",(*c)/(*d));
+	printf("\nRemainder of the entered numbers %d",(*c)%(*d));
+	return 0;
+	}
+
+
+#include<stdio.h>
+void swap(int *x,int *y);
+int main(){
+	int a,b;
+	printf("\nEnter the first number ");
+	scanf("%d",&a);
+	printf("\nEnter the second number ");
+	scanf("%d",&b);
+	printf("\nBefore swapping:\nNumber1=%d\nNumber2=%d",a,b);
+	swap(&a,&b);
+	printf("\nAfter swapping:\nNumber1=%d\nNUmber2=%d",a,b);
+	return 0;
+	}
+void swap(int *x, int *y){
+	int temp;
+	temp=*x;
+	*x=*y;
+	*y=temp;
+	}
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+FILE *fp;
+char c;
+char str[40];
+printf("Data Input....\n");
+fp=fopen("BMSCE.txt","w");
+while((c=getchar())!=EOF)
+putc(c,fp);
+fclose(fp);
+printf("Data output.....\n");
+fp=fopen("BMSCE.txt","r");
+if(fp==NULL)
+{
+printf("error\n");
+exit(1);
+}
+fgets(str,40,fp);
+puts(str);
+fclose(fp);
+return 0;
+} 
